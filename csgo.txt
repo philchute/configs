@@ -1,5 +1,8 @@
 // CS:GO Danger Zone binds 
-// Philip Chute May 7, 2023
+// Philip Chute Aug 23, 2023
+//
+// Place file in your /csgo/cfg/ directory as a .txt or a .cfg file 
+// Load in game by with exec command in console: exec myfile.cfg
 //
 //  +-----------------------+   +-------------------------------+
 //  | Insert| Home  | Pg Up |   | Num.L |   /   |   *   |   -   |
@@ -13,18 +16,18 @@
 //                              |-------+-------+-------+-------|
 //                              |   1   |   2   |   3   |       |
 //                              | Knife | pistol| scout | Enter |
-//                              |---------------+-------| hl gf |
+//                              |---------------+-------| jumps |
 //                              |   0           |   .   |       |
-//                              |  armor        | armor |       |
+//                              |  ammo         | ammo  |       |
 //                              +-------------------------------+
 
 
 bind "kp_home" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_drone_upgrade_purchase; slot3;say_team Bought Drone Speed Upgrade"
 bind "kp_uparrow" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_zone_upgrade_purchase; slot3;say_team Bought Zone Prediction Upgrade"
 bind "kp_pgup" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_highres_upgrade_purchase; slot3;say_team Bought High-Res Map Upgrade"
+
 bind "kp_slash" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_pilot_upgrade_purchase; slot3;say_team Bought Drone Pilot Upgrade"
 bind "kp_*" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_jammer_purchase; slot3;say_team Bought Radar Jammer"
-
 
 bind "kp_leftarrow" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_armor_purchase; slot3;say_team Bought Armor"
 bind "kp_5" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_shield_purchase; slot3;say_team Bought Shield"
@@ -34,10 +37,10 @@ bind "kp_end" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_knife_purc
 bind "kp_downarrow" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_pistol_purchase; slot3;say_team Bought Pistol"
 bind "kp_pgdn" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_ssg08_purchase; slot3;say_team Bought Scout"
 
-
 bind "kp_ins" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_ammo_purchase; slot3;say_team Bought Ammo"
 bind "kp_del" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_ammo_purchase; slot3;say_team Bought Ammo"
 bind "kp_enter" "use weapon_tablet; tabletbuy_open; tabletbuy_buy_drone_mobility_purchase; slot3;say_team Bought Mobility"
+
 bind "kp_plus" "say_team attack now - atacar agora - ataca ahora - атаковать сейчас"
 bind "kp_minus" "say_team just hide - apenas se esconda - solo escóndete - просто спрячь"
 
