@@ -1,0 +1,50 @@
+// CS2 binds - keypad for surf etc
+// Philip Chute Feb 1, 2024
+//
+// Place file in your steamapps/Counter-Strike Global Offensive/game/csgo/cfg/ directory as a .txt or a .cfg file 
+// Load in game by with exec command in console like "exec myfilename.txt"
+//
+//  +-----------------------+   +-------------------------------+
+//  | Insert| Home  | Pg Up |   | Num.L |   /   |   *   |   -   |
+//  |!r bind| hello |   ns  |   |  (na) | no rus|  buy  | oh ok |
+//  |-------+-------+-------|   |-------+-------+-------+-------|
+//  | Delete|  End  | Pg Dn |   |   7   |   8   |   9   |       |
+//  | msg me|ss&demo| relax |   |       |       |       |   +   |
+//  +-----------------------+   |-------+-------+-------|       |
+//                              |   4   |   5   |   6   |  ns   |
+//                              |rotate | wait  |   go  |       |
+//                              |-------+-------+-------+-------|
+//                              |   1   |   2   |   3   |       |
+//                              | save  |partial|fullbuy| Enter |
+//                              |---------------+-------| make  |
+//                              |   0           |   .   | check |
+//                              |   teleport    |surf !r| point |
+//                              +-------------------------------+
+
+bind BACKSPACE        "say turn binds in CS2 are +turnleft and +turnright like bind mouse4 +turnleft"
+bind INS              "say to restart without typing !r just bind KEY wst_r"
+bind DEL              "say i'm philchute on discord and https://www.youtube.com/@PhilipChute"
+bind HOME             "say Hello! Hola! olá! Bonjour! привет! 你好! 안녕하세요!"
+bind END              "say OK that's IT! Somebody call an admin. I want your screenshots AND your demos. ur busted now buddy! %h|%a"
+bind PGUP             "say у меня встал от твоей игры"
+bind PGDN             "say Расслабьтесь, все нормально"
+
+bind KP_MINUS         "say oh ok %h|%a"
+bind KP_PLUS          "say Nice Shot! %h|%a"
+bind KP_ENTER         "cs_cp"
+bind KP_INSERT        "cs_tp"
+bind KP_DEL           "wst_r"
+
+bind KP_END           "say_team SAVE SAVE / ECO ECO сейв / эко"
+bind KP_DOWNARROW     "say_team PARTIAL BUY / HALF BUY купить половину"
+bind KP_PGDN          "say_team FULL BUY полная покупка"
+bind KP_LEFTARROW     "say_team ROTATE ротейт"
+bind KP_5             "say_team WAIT / HOLD холд"
+bind KP_RIGHTARROW    "say_team GO GO GO Давай!"
+bind KP_HOME          ""
+bind KP_UPARROW       ""
+bind KP_PGUP          ""
+bind KP_SLASH         "say Я не говорю по-русски"
+bind KP_*             "say_team can you buy for me? можешь дать/дропнуть мне ствол?"
+
+echo "CS2 binds loaded from config file"
