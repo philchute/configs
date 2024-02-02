@@ -1,5 +1,5 @@
 // CS2 binds - keypad for surf etc
-// Philip Chute Feb 1, 2024
+// Philip Chute Feb 2, 2024
 //
 // Place file in your steamapps/Counter-Strike Global Offensive/game/csgo/cfg/ directory as a .txt or a .cfg file 
 // Load in game by with exec command in console like "exec myfilename.txt"
@@ -9,24 +9,24 @@
 //  |!r bind| hello |   ns  |   |  (na) | no rus|  buy  | oh ok |
 //  |-------+-------+-------|   |-------+-------+-------+-------|
 //  | Delete|  End  | Pg Dn |   |   7   |   8   |   9   |       |
-//  | msg me|ss&demo| relax |   |       |       |       |   +   |
+//  | msg me|ss&demo| relax |   | save  |partial|fullbuy|   +   |
 //  +-----------------------+   |-------+-------+-------|       |
 //                              |   4   |   5   |   6   |  ns   |
 //                              |rotate | wait  |   go  |       |
 //                              |-------+-------+-------+-------|
 //                              |   1   |   2   |   3   |       |
-//                              | save  |partial|fullbuy| Enter |
+//                              | 1 left| 2 left| 3 left| Enter |
 //                              |---------------+-------| make  |
 //                              |   0           |   .   | check |
 //                              |   teleport    |surf !r| point |
 //                              +-------------------------------+
 
-bind \                "say cs2 binds are sometimes different: KP_0 through KP_9 KP_DIVIDE KP_MULTIPLY [ ] \ SEMICOLIN ' ENTER"
+bind \                "say key binds in CS2: KP_0 through KP_9 KP_DIVIDE KP_MULTIPLY KP_ENTER [ ] \ SEMICOLIN ' ENTER"
 bind BACKSPACE        "say turn binds in CS2 are +turnleft and +turnright like bind mouse4 +turnleft"
 bind INS              "say to restart without typing !r just bind KEY wst_r"
 bind DEL              "say i'm philchute on discord and https://www.youtube.com/@PhilipChute"
 bind HOME             "say Hello! Hola! olá! Bonjour! привет! 你好! 안녕하세요!"
-bind END              "say OK that's IT! Somebody call an admin. I want your screenshots AND your demos. ur busted now buddy! %h|%a"
+bind END              "say OK that's IT! Somebody call an admin. I want your screenshots AND your demos. ur busted now buddy!"
 bind PGUP             "playerradio Radio.Compliment; say у меня встал от твоей игры"
 bind PGDN             "say Расслабьтесь, все нормально"
 
@@ -36,15 +36,15 @@ bind KP_ENTER         "cs_cp"
 bind KP_0             "cs_tp"
 bind KP_DEL           "wst_r"
 
-bind KP_1             "playerradio Radio.EcoRound; say_team SAVE SAVE / ECO ECO сейв / эко"
-bind KP_2             "say_team PARTIAL BUY / HALF BUY купить половину"
-bind KP_3             "playerradio Radio.SpendRound; say_team FULL BUY полная покупка"
+bind KP_1             "playerradio OneEnemyLeft"
+bind KP_2             "playerradio TwoEnemiesLeft "
+bind KP_3             "playerradio ThreeEnemiesLeft"
 bind KP_4             "say_team ROTATE ротейт"
 bind KP_5             "playerradio Radio.HoldPosition; say_team WAIT / HOLD холд"
 bind KP_6             "playerradio Radio.GoGoGo; say_team GO! GO! GO! Давай!"
-bind KP_7             ""
-bind KP_8             ""
-bind KP_9             ""
+bind KP_7             "playerradio Radio.EcoRound; say_team SAVE SAVE / ECO ECO сейв / эко"
+bind KP_8             "say_team PARTIAL BUY / HALF BUY купить половину"
+bind KP_9             "playerradio Radio.SpendRound; say_team FULL BUY полная покупка"
 bind KP_DIVIDE        "say no russian Я не говорю по-русски"
 bind KP_MULTIPLY      "playerradio Radio.NeedDrop; say_team can you buy for me? можешь дать/дропнуть мне ствол?"
 
