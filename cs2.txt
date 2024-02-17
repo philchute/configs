@@ -5,24 +5,24 @@
 // There are 104 keys on my US keyboard, all scancodes are bound below
 // Pretty much default setup, with some extra keys for community servers and communication:
 //  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-----------------------+
-//  | Escape|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |  | PRINT | SCROLL| PAUSE |
+//  | ESCAPE|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |  | PRINT | SCROLL| PAUSE |
 //  | cancel|    | zeus  |       |autoBuy| rebuy |   | screen| save  | load  |       |   |       | quit  |       | prac. |  | screen| (na)  | pause |
 //  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-------+-------+-------+
 //  +--------------------------------------------------------------------------------------------------------------------+  +-----------------------+  +-------------------------------+
-//  | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |  |  INS  | HOME  | PG_UP |  | NUM.L |   /   |   *   |   -   |
-//  |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | decoy |molotov|utility|       |contactInfo |  |!r bind| hello | R.ns! |  |  (na) | no rus|  buy? | oh ok |
+//  | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |  |  INS  | HOME  | PGUP  |  | NUM.L |   /   |   *   |   -   |
+//  |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | decoy |molotov| zeus  |utility|contactInfo |  |!r bind| hello | R.ns! |  |  (na) | no rus|  buy? | oh ok |
 //  |--------------------------------------------------------------------------------------------------------------------|  |-------+-------+-------|  |-------+-------+-------+-------|
-//  | TAB        |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |   [   |   ]   |   \   |  |  DEL  |  END  |PG_DOWN|  |   7   |   8   |   9   |       |
+//  | TAB        |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |   [   |   ]   |   \   |  |  DEL  |  END  | PGDN  |  |   7   |   8   |   9   |       |
 //  | scoreboard | last  |   ^   |  use  |reload |  tag  |  chat |team ch| info  |       |noclip |browser|config |  keys |  | return|ss&demo|R.relax|  | save  |partial|fullbuy|   +   |
 //  |--------------------------------------------------------------------------------------------------------------------|  +-----------------------+  |-------+-------+-------|  ns!  |
 //  | CAPSLOCK      |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |   '   |      ENTER |                             |   4   |   5   |   6   |       |
 //  | (na)          |   <   |   \/  |   >   |inspect| drop  | armor |       |  kill |       |       |       |            |                             |rotate | wait  |   go  |       |
 //  |--------------------------------------------------------------------------------------------------------------------|          +-------+          |-------+-------+-------+-------|
 //  | SHIFT            |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   /   |          RSHIFT |          |   ^   |          |   1   |   2   |   3   | ENTER |
-//  | walk             | zeus  |medShot|radial |radial2|buyMenu| nades |  team |       |       |       |                 |          |       |          | 1 left| 2 left| 3 left|       |
+//  | walk             | radio |medShot|radial |radial2|buyMenu| nades |  team |       |       |       |                 |          |       |          | 1 left| 2 left| 3 left|       |
 //  |--------------------------------------------------------------------------------------------------------------------|  +-------+-------+-------+  |---------------+-------| kz    |
 //  | CTRL          |  WIN  |  ALT  |                       SPACE                      |  RALT |  RWIN |  MENU |   RCTRL |  |   <   |   \/  |   >   |  |   0           |   .   | check |
-//  | duck          |  (na) | radio |                       jump                       |       |  (na) |       |         |  |       |       |       |  |   teleport    |surf !r| point |
+//  | duck          |  (na) |       |                       jump                       |       |  (na) |       |         |  |       |       |       |  |   teleport    |surf !r| point |
 //  +--------------------------------------------------------------------------------------------------------------------+  +-----------------------+  +-------------------------------+
 
 echo "---------Listing old binds:"      // Return info in console
@@ -94,11 +94,11 @@ bind scancode21 "+reload"               // R
 bind scancode22 "+back"                 // S
 bind scancode23 "+spray_menu"           // T
 bind scancode24 "messagemode2"          // U
-bind scancode25 "+radialradio2"         // V
+bind scancode25 "+radialRadio2"         // V
 bind scancode26 "+forward"              // W
 bind scancode27 "slot12"                // X
-bind scancode28 "messagemode1"          // Y
-bind scancode29 "slot11"                // Z
+bind scancode28 "messagemode"           // Y
+bind scancode29 "radio"                 // Z
 bind scancode30 "slot1"                 // 1
 bind scancode31 "slot2"                 // 2
 bind scancode32 "slot3"                 // 3
@@ -114,8 +114,8 @@ bind scancode41 "cancelSelect"          // ESCAPE
 bind scancode42 "sayContactInfo"        // BACKSPACE
 bind scancode43 "+showScores"           // TAB
 bind scancode44 "+jump"                 // SPACE
-bind scancode45 "slot13"                // -
-bind scancode46 ""                      // =
+bind scancode45 "slot11"                // -
+bind scancode46 "slot13"                // =
 bind scancode47 "sayBrowser"            // [
 bind scancode48 "sayConfig"             // ]
 bind scancode49 "sayKeys"               // \
@@ -171,7 +171,7 @@ bind scancode99 "runRestart"            // KP_DEL
 bind scancode101 ""                     // APP (MENU)
 bind scancode224 "+duck"                // CTRL
 bind scancode225 "+sprint"              // SHIFT
-bind scancode226 "radio"                // ALT
+bind scancode226 ""                     // ALT
 bind scancode227 ""                     // LWIN (do not use unless unbound in Windows)
 bind scancode228 ""                     // RCTRL
 bind scancode229 ""                     // RSHIFT
