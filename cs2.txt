@@ -4,67 +4,43 @@
 // Load in-game with the exec command in console like "exec myfilename.txt"
 // There are 104 keys on my US keyboard, all scancodes are bound below
 // Pretty much default setup, with some extra keys for community servers and communication:
-//   +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+
-//   | Escape|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |
-//   | (menu)|    | zeus  |       |autoBuy| rebuy |   | screen| save  | load  |       |   |       | quit  |       | prac. |
-//   +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+
-//   +--------------------------------------------------------------------------------------------------------------------+
-//   | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |
-//   |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | Decoy |molotov|utility|       |contactInfo |
-//   |--------------------------------------------------------------------------------------------------------------------|
-//   | TAB        |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |   [   |   ]   |   \   |
-//   | scoreboard | last  |   ^   |  use  |reload |  tag  |  chat |team ch| info  |       |noclip |browser|config |  keys |
-//   |--------------------------------------------------------------------------------------------------------------------|
-//   | CAPSLOCK      |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |   '   |      ENTER |
-//   | (na)          |   <   |   \/  |   >   |inspect| drop  | armor |       |  kill |       |       |       |            |
-//   |--------------------------------------------------------------------------------------------------------------------|
-//   | SHIFT            |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   /   |          RSHIFT |
-//   | walk             | zeus  |medShot|radial |radial2|buyMenu| nades |  team |       |       |       |                 |
-//   |--------------------------------------------------------------------------------------------------------------------|
-//   | CTRL          |  WIN  |  ALT  |                       SPACE                      |  RALT |  RWIN |  MENU |   RCTRL |
-//   | duck          |  (na) | radio |                       jump                       |       |  (na) |       |         |
-//   +--------------------------------------------------------------------------------------------------------------------+
-//
-//  +-----------------------+
-//  | Print | Scroll| Pause |
-//  | screen| (na)  | Pause |
-//  +-------+-------+-------+
-//  +-----------------------+   +-------------------------------+
-//  | Insert| Home  | Pg Up |   | Num.L |   /   |   *   |   -   |
-//  |!r bind| hello | R.ns! |   |  (na) | no rus|  buy? | oh ok |
-//  |-------+-------+-------|   |-------+-------+-------+-------|
-//  | Delete|  End  | Pg Dn |   |   7   |   8   |   9   |       |
-//  | return|ss&demo|R.relax|   | save  |partial|fullbuy|   +   |
-//  +-----------------------+   |-------+-------+-------|  ns!  |
-//                              |   4   |   5   |   6   |       |
-//                              |rotate | wait  |   go  |       |
-//          +-------+           |-------+-------+-------+-------|
-//          |   ^   |           |   1   |   2   |   3   | Enter |
-//          |       |           | 1 left| 2 left| 3 left|       |
-//  +-------+-------+-------+   |---------------+-------|  make |
-//  |   <   |   \/  |   >   |   |   0           |   .   | check |
-//  |       |       |       |   |   teleport    |surf !r| point |
-//  +-----------------------+   +-------------------------------+
+//  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-----------------------+
+//  | Escape|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |  | PRINT | SCROLL| PAUSE |
+//  | cancel|    | zeus  |       |autoBuy| rebuy |   | screen| save  | load  |       |   |       | quit  |       | prac. |  | screen| (na)  | pause |
+//  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-------+-------+-------+
+//  +--------------------------------------------------------------------------------------------------------------------+  +-----------------------+  +-------------------------------+
+//  | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |  |  INS  | HOME  | PG_UP |  | NUM.L |   /   |   *   |   -   |
+//  |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | decoy |molotov|utility|       |contactInfo |  |!r bind| hello | R.ns! |  |  (na) | no rus|  buy? | oh ok |
+//  |--------------------------------------------------------------------------------------------------------------------|  |-------+-------+-------|  |-------+-------+-------+-------|
+//  | TAB        |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |   [   |   ]   |   \   |  |  DEL  |  END  |PG_DOWN|  |   7   |   8   |   9   |       |
+//  | scoreboard | last  |   ^   |  use  |reload |  tag  |  chat |team ch| info  |       |noclip |browser|config |  keys |  | return|ss&demo|R.relax|  | save  |partial|fullbuy|   +   |
+//  |--------------------------------------------------------------------------------------------------------------------|  +-----------------------+  |-------+-------+-------|  ns!  |
+//  | CAPSLOCK      |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |   '   |      ENTER |                             |   4   |   5   |   6   |       |
+//  | (na)          |   <   |   \/  |   >   |inspect| drop  | armor |       |  kill |       |       |       |            |                             |rotate | wait  |   go  |       |
+//  |--------------------------------------------------------------------------------------------------------------------|          +-------+          |-------+-------+-------+-------|
+//  | SHIFT            |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   /   |          RSHIFT |          |   ^   |          |   1   |   2   |   3   | ENTER |
+//  | walk             | zeus  |medShot|radial |radial2|buyMenu| nades |  team |       |       |       |                 |          |       |          | 1 left| 2 left| 3 left|       |
+//  |--------------------------------------------------------------------------------------------------------------------|  +-------+-------+-------+  |---------------+-------| kz    |
+//  | CTRL          |  WIN  |  ALT  |                       SPACE                      |  RALT |  RWIN |  MENU |   RCTRL |  |   <   |   \/  |   >   |  |   0           |   .   | check |
+//  | duck          |  (na) | radio |                       jump                       |       |  (na) |       |         |  |       |       |       |  |   teleport    |surf !r| point |
+//  +--------------------------------------------------------------------------------------------------------------------+  +-----------------------+  +-------------------------------+
 
-echo "---------Listing old binds:"
-key_listboundkeys
-unbindAll
+echo "---------Listing old binds:"      // Return info in console
+key_listboundkeys                       // List currently bound keys
+unbindALL                               // It's the only way to be sure
 
-cl_showloadout             true         // Always show weapons on hud
+cl_showloadout             true         // Always show weapons on HUD
 cl_usenewbob               true         // New weapon bob can be turned off
 r_drawtracers_firstperson  true         // Your tracers can be turned off
-sensitivity                1            // Default is 1.25
+sensitivity                1.00         // Default mouse sensitivity is 1.25
 
-alias buyArmor             "buy vest; buy vesthelm; buy defuser"
+alias buyArmor             "buy vest; buy vestHelm; buy defuser"
 alias buyNades             "buy heGrenade; buy flashbang; buy smokeGrenade; buy incGrenade; buy molotov; buy flashbang; buy decoy"
 alias buyZeus              "buy taser; use weapon_knife; use weapon_taser; drop; slot1"
-
 alias practiceConfig       "sv_cheats 1;sv_infinite_ammo 1;sv_grenade_trajectory 1;mp_maxmoney 65535;mp_startmoney 65535;mp_afterroundmoney 65535;mp_buytime 60000;mp_buy_anywhere 1;mp_roundtime_defuse 60;mp_restartgame 1"
-
 alias runCheckpoint        "cs_cp"            // Create checkpoint on kz maps
 alias runRestart           "wst_r; css_r; r"  // Restart commands for different surf and bhop servers
 alias runTeleport          "cs_tp"            // Teleport command for kz maps
-
 alias sayBrowser           "say the in-game custom server browser is broken, use this website: cs2browser.com"
 alias sayBuyFull           "playerRadio Radio.SpendRound; say_team FULL BUY полная покупка"
 alias sayBuyHalf           "say_team PARTIAL BUY / HALF BUY / FORCE BUY купить половину"
@@ -97,7 +73,6 @@ bind mwheelUp   "invPrev"               // default
 bind mwheelDown "invNext"               // default
 bind mouse_X    "yaw"                   // default
 bind mouse_Y    "pitch"                 // default
-
 bind scancode4  "+left"                 // A
 bind scancode5  "buyMenu"               // B
 bind scancode6  "+radialRadio"          // C
@@ -182,7 +157,6 @@ bind scancode85 "sayNeedBuy"            // KP_MULTIPLY
 bind scancode86 "sayOhOk"               // KP_MINUS
 bind scancode87 "sayCompliment"         // KP_PLUS
 bind scancode88 "runCheckpoint"         // KP_0
-bind scancode98 "runTeleport"           // KP_ENTER
 bind scancode89 "sayOneLeft"            // KP_1
 bind scancode90 "sayTwoLeft"            // KP_2
 bind scancode91 "sayThreeLeft"          // KP_3
@@ -192,6 +166,7 @@ bind scancode94 "sayGo"                 // KP_6
 bind scancode95 "sayBuySave"            // KP_7
 bind scancode96 "sayBuyHalf"            // KP_8
 bind scancode97 "sayBuyFull"            // KP_9
+bind scancode98 "runTeleport"           // KP_ENTER
 bind scancode99 "runRestart"            // KP_DEL
 bind scancode101 ""                     // APP (MENU)
 bind scancode224 "+duck"                // CTRL
