@@ -1,51 +1,207 @@
-// CS2 binds - keypad for surf etc
-// Philip Chute Feb 2, 2024
+// CS2 config, Philip Chute, Feb 17, 2024
+// This config was written with Valve's new scancode region agnostic bindings as an exercise, a guide, and as a template
+// Place this a .txt or .cfg file in your Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg directory
+// Load in-game with the exec command in console like "exec myfilename.txt"
+// There are 104 keys on my US keyboard, all scancodes are bound below
+// Pretty much default setup, with some extra keys for community servers and communication:
+//   +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+
+//   | Escape|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |
+//   | (menu)|    | zeus  |       |autoBuy| rebuy |   | screen| save  | load  |       |   |       | quit  |       | prac. |
+//   +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+
+//   +--------------------------------------------------------------------------------------------------------------------+
+//   | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |
+//   |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | Decoy |molotov|utility|       |contactInfo |
+//   |--------------------------------------------------------------------------------------------------------------------|
+//   | TAB        |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |   [   |   ]   |   \   |
+//   | scoreboard | last  |   ^   |  use  |reload |  tag  |  chat |team ch| info  |       |noclip |browser|config |  keys |
+//   |--------------------------------------------------------------------------------------------------------------------|
+//   | CAPSLOCK      |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |   '   |      ENTER |
+//   | (na)          |   <   |   \/  |   >   |inspect| drop  | armor |       |  kill |       |       |       |            |
+//   |--------------------------------------------------------------------------------------------------------------------|
+//   | SHIFT            |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   /   |          RSHIFT |
+//   | walk             | zeus  |medShot|radial |radial2|buyMenu| nades |  team |       |       |       |                 |
+//   |--------------------------------------------------------------------------------------------------------------------|
+//   | CTRL          |  WIN  |  ALT  |                       SPACE                      |  RALT |  RWIN |  MENU |   RCTRL |
+//   | duck          |  (na) | radio |                       jump                       |       |  (na) |       |         |
+//   +--------------------------------------------------------------------------------------------------------------------+
 //
-// Place file in your steamapps/Counter-Strike Global Offensive/game/csgo/cfg/ directory as a .txt or a .cfg file 
-// Load in game by with exec command in console like "exec myfilename.txt"
-//
+//  +-----------------------+
+//  | Print | Scroll| Pause |
+//  | screen| (na)  | Pause |
+//  +-------+-------+-------+
 //  +-----------------------+   +-------------------------------+
 //  | Insert| Home  | Pg Up |   | Num.L |   /   |   *   |   -   |
-//  |!r bind| hello |   ns  |   |  (na) | no rus|  buy  | oh ok |
+//  |!r bind| hello | R.ns! |   |  (na) | no rus|  buy? | oh ok |
 //  |-------+-------+-------|   |-------+-------+-------+-------|
 //  | Delete|  End  | Pg Dn |   |   7   |   8   |   9   |       |
-//  | msg me|ss&demo| relax |   | save  |partial|fullbuy|   +   |
-//  +-----------------------+   |-------+-------+-------|       |
-//                              |   4   |   5   |   6   |  ns   |
+//  | return|ss&demo|R.relax|   | save  |partial|fullbuy|   +   |
+//  +-----------------------+   |-------+-------+-------|  ns!  |
+//                              |   4   |   5   |   6   |       |
 //                              |rotate | wait  |   go  |       |
-//                              |-------+-------+-------+-------|
-//                              |   1   |   2   |   3   |       |
-//                              | 1 left| 2 left| 3 left| Enter |
-//                              |---------------+-------| make  |
-//                              |   0           |   .   | check |
-//                              |   teleport    |surf !r| point |
-//                              +-------------------------------+
+//          +-------+           |-------+-------+-------+-------|
+//          |   ^   |           |   1   |   2   |   3   | Enter |
+//          |       |           | 1 left| 2 left| 3 left|       |
+//  +-------+-------+-------+   |---------------+-------|  make |
+//  |   <   |   \/  |   >   |   |   0           |   .   | check |
+//  |       |       |       |   |   teleport    |surf !r| point |
+//  +-----------------------+   +-------------------------------+
 
-bind \                "say key binds in CS2: KP_0 through KP_9 KP_DIVIDE KP_MULTIPLY KP_ENTER [ ] \ SEMICOLIN ' ENTER"
-bind BACKSPACE        "say turn binds in CS2 are +turnleft and +turnright like bind mouse4 +turnleft"
-bind INS              "say to restart without typing !r just bind KEY wst_r"
-bind DEL              "say i'm philchute on discord and https://www.youtube.com/@PhilipChute"
-bind HOME             "say Hello! Hola! olá! Bonjour! привет! 你好! 안녕하세요!"
-bind END              "say OK that's IT! Somebody call an admin. I want your screenshots AND your demos. ur busted now buddy!"
-bind PGUP             "playerradio Radio.Compliment; say у меня встал от твоей игры"
-bind PGDN             "say Расслабьтесь, все нормально"
+echo "---------Listing old binds:"
+key_listboundkeys
+unbindAll
 
-bind KP_MINUS         "say oh ok"
-bind KP_PLUS          "playerradio Radio.Compliment; say Nice Shot!"
-bind KP_ENTER         "cs_cp"
-bind KP_0             "cs_tp"
-bind KP_DEL           "wst_r"
+cl_showloadout             true         // Always show weapons on hud
+cl_usenewbob               true         // New weapon bob can be turned off
+r_drawtracers_firstperson  true         // Your tracers can be turned off
+sensitivity                1            // Default is 1.25
 
-bind KP_1             "playerradio OneEnemyLeft"
-bind KP_2             "playerradio TwoEnemiesLeft "
-bind KP_3             "playerradio ThreeEnemiesLeft"
-bind KP_4             "say_team ROTATE ротейт"
-bind KP_5             "playerradio Radio.HoldPosition; say_team WAIT / HOLD холд"
-bind KP_6             "playerradio Radio.GoGoGo; say_team GO! GO! GO! Давай!"
-bind KP_7             "playerradio Radio.EcoRound; say_team SAVE SAVE / ECO ECO сейв / эко"
-bind KP_8             "say_team PARTIAL BUY / HALF BUY купить половину"
-bind KP_9             "playerradio Radio.SpendRound; say_team FULL BUY полная покупка"
-bind KP_DIVIDE        "say no russian Я не говорю по-русски"
-bind KP_MULTIPLY      "playerradio Radio.NeedDrop; say_team can you buy for me? можешь дать/дропнуть мне ствол?"
+alias buyArmor             "buy vest; buy vesthelm; buy defuser"
+alias buyNades             "buy heGrenade; buy flashbang; buy smokeGrenade; buy incGrenade; buy molotov; buy flashbang; buy decoy"
+alias buyZeus              "buy taser; use weapon_knife; use weapon_taser; drop; slot1"
 
-echo "CS2 binds loaded from config file"
+alias practiceConfig       "sv_cheats 1;sv_infinite_ammo 1;sv_grenade_trajectory 1;mp_maxmoney 65535;mp_startmoney 65535;mp_afterroundmoney 65535;mp_buytime 60000;mp_buy_anywhere 1;mp_roundtime_defuse 60;mp_restartgame 1"
+
+alias runCheckpoint        "cs_cp"            // Create checkpoint on kz maps
+alias runRestart           "wst_r; css_r; r"  // Restart commands for different surf and bhop servers
+alias runTeleport          "cs_tp"            // Teleport command for kz maps
+
+alias sayBrowser           "say the in-game custom server browser is broken, use this website: cs2browser.com"
+alias sayBuyFull           "playerRadio Radio.SpendRound; say_team FULL BUY полная покупка"
+alias sayBuyHalf           "say_team PARTIAL BUY / HALF BUY / FORCE BUY купить половину"
+alias sayBuySave           "playerRadio Radio.EcoRound; say_team SAVE SAVE / ECO ECO сейв / эко"
+alias sayCompliment        "playerRadio Radio.Compliment; say Nice Shot!"
+alias sayConfig            "say my config file: raw.githubusercontent.com/philchute/configs/master/cs2.txt"
+alias sayContactInfo       "say i'm philchute on discord and www.youtube.com/@PhilipChute"
+alias sayGo                "playerRadio Radio.GoGoGo; say_team GO! GO! GO! Давай!"
+alias sayHello             "say Hello! Hola! olá! Bonjour! привет! 你好! 안녕하세요!"
+alias sayHold              "playerRadio Radio.HoldPosition; say_team WAIT / HOLD холд"
+alias sayKeys              "say key binds in CS2: KP_0 through KP_9 KP_DIVIDE KP_MULTIPLY BACKSPACE SEMICOLIN"
+alias sayNeedBuy           "playerRadio Radio.NeedDrop; say_team can you buy for me? можешь дать/дропнуть мне ствол?"
+alias sayNoRussian         "say No Russian. Я не говорю по-русски"
+alias sayOhOk              "say oh ok"
+alias sayOneLeft           "playerRadio Radio.OneEnemyLeft"       // not working?
+alias sayRestartKeys       "say to restart without typing !r just bind a key to wst_r (GFL) css_r (IG) and/or r (XPLAY)"
+alias sayRotate            "say_team ROTATE ротейт"
+alias sayRussianCompliment "playerRadio Radio.Compliment; say у меня встал от твоей игры"
+alias sayRussianInsult     "say Расслабьтесь, все нормально"
+alias sayShock             "say OK that's IT! Somebody call an admin. I want your screenshots AND your demos. ur busted now buddy!"
+alias sayThreeLeft         "playerRadio Radio.ThreeEnemiesLeft"   // not working?
+alias sayTwoLeft           "playerRadio Radio.TwoEnemiesLeft"     // not working?
+
+bind mouse1     "+attack"
+bind mouse2     "+attack2"
+bind mouse3     "player_ping"
+bind mouse4     "+turnLeft"
+bind mouse5     "+turnRight"            // turn binds for surf maps
+bind mwheelUp   "invPrev"               // default
+bind mwheelDown "invNext"               // default
+bind mouse_X    "yaw"                   // default
+bind mouse_Y    "pitch"                 // default
+
+bind scancode4  "+left"                 // A
+bind scancode5  "buyMenu"               // B
+bind scancode6  "+radialRadio"          // C
+bind scancode7  "+right"                // D
+bind scancode8  "+use"                  // E
+bind scancode9  "+lookAtWeapon"         // F
+bind scancode10 "drop"                  // G
+bind scancode11 "buyArmor"              // H
+bind scancode12 ""                      // I (default is show_loadout_toggle)
+bind scancode13 ""                      // J
+bind scancode14 "kill"                  // K
+bind scancode15 ""                      // L
+bind scancode16 "teamMenu"              // M
+bind scancode17 "buyNades"              // N
+bind scancode18 ""                      // O
+bind scancode19 "sv_cheats 1; noclip"   // P
+bind scancode20 "lastInv"               // Q
+bind scancode21 "+reload"               // R
+bind scancode22 "+back"                 // S
+bind scancode23 "+spray_menu"           // T
+bind scancode24 "messagemode2"          // U
+bind scancode25 "+radialradio2"         // V
+bind scancode26 "+forward"              // W
+bind scancode27 "slot12"                // X
+bind scancode28 "messagemode1"          // Y
+bind scancode29 "slot11"                // Z
+bind scancode30 "slot1"                 // 1
+bind scancode31 "slot2"                 // 2
+bind scancode32 "slot3"                 // 3
+bind scancode33 "slot4"                 // 4
+bind scancode34 "slot5"                 // 5
+bind scancode35 "slot6"                 // 6
+bind scancode36 "slot7"                 // 7
+bind scancode37 "slot8"                 // 8
+bind scancode38 "slot9"                 // 9
+bind scancode39 "slot10"                // 0
+bind scancode40 ""                      // ENTER
+bind scancode41 "cancelSelect"          // ESCAPE
+bind scancode42 "sayContactInfo"        // BACKSPACE
+bind scancode43 "+showScores"           // TAB
+bind scancode44 "+jump"                 // SPACE
+bind scancode45 "slot13"                // -
+bind scancode46 ""                      // =
+bind scancode47 "sayBrowser"            // [
+bind scancode48 "sayConfig"             // ]
+bind scancode49 "sayKeys"               // \
+bind scancode51 ""                      // SEMICOLIN
+bind scancode52 ""                      // '
+bind scancode53 "toggleConsole"         // `
+bind scancode54 ""                      // ,
+bind scancode55 ""                      // .
+bind scancode56 ""                      // /
+bind scancode57 ""                      // CAPSLOCK (will also toggle caps)
+bind scancode58 "buyZeus"               // F1
+bind scancode59 ""                      // F2
+bind scancode60 "autoBuy"               // F3
+bind scancode61 "rebuy"                 // F4
+bind scancode62 "jpeg"                  // F5
+bind scancode63 "save quick"            // F6
+bind scancode64 "load quick"            // F7
+bind scancode65 ""                      // F8
+bind scancode66 ""                      // F9
+bind scancode67 "cs_quit_prompt"        // F10
+bind scancode68 ""                      // F11
+bind scancode69 "practiceConfig"        // F12
+bind scancode70 ""                      // Print Screen (will also copy screenshot to clipboard)
+bind scancode71 ""                      // SCROLLLOCK (do not use unless unbound in Windows)
+bind scancode72 "demo_togglepause"      // PAUSE
+bind scancode73 "sayRestartKeys"        // INSERT
+bind scancode74 "sayHello"              // HOME
+bind scancode75 "sayRussianCompliment"  // PG_UP
+bind scancode76 "sellBackAll"           // DEL
+bind scancode77 "sayShock"              // END
+bind scancode78 "sayRussianInsult"      // PG_DOWN
+bind scancode79 ""                      // RIGHTARROW
+bind scancode80 ""                      // LEFTARROW
+bind scancode81 "+voiceRecord"          // DOWNARROW (on my mouse)
+bind scancode82 ""                      // UPARROW
+bind scancode83 ""                      // NUMLOCKTOGGLE (do not use unless unbound in Windows)
+bind scancode84 "sayNoRussian"          // KP_DIVIDE
+bind scancode85 "sayNeedBuy"            // KP_MULTIPLY
+bind scancode86 "sayOhOk"               // KP_MINUS
+bind scancode87 "sayCompliment"         // KP_PLUS
+bind scancode88 "runCheckpoint"         // KP_0
+bind scancode98 "runTeleport"           // KP_ENTER
+bind scancode89 "sayOneLeft"            // KP_1
+bind scancode90 "sayTwoLeft"            // KP_2
+bind scancode91 "sayThreeLeft"          // KP_3
+bind scancode92 "sayRotate"             // KP_4
+bind scancode93 "sayHold"               // KP_5
+bind scancode94 "sayGo"                 // KP_6
+bind scancode95 "sayBuySave"            // KP_7
+bind scancode96 "sayBuyHalf"            // KP_8
+bind scancode97 "sayBuyFull"            // KP_9
+bind scancode99 "runRestart"            // KP_DEL
+bind scancode101 ""                     // APP (MENU)
+bind scancode224 "+duck"                // CTRL
+bind scancode225 "+sprint"              // SHIFT
+bind scancode226 "radio"                // ALT
+bind scancode227 ""                     // LWIN (do not use unless unbound in Windows)
+bind scancode228 ""                     // RCTRL
+bind scancode229 ""                     // RSHIFT
+bind scancode230 ""                     // RALT
+bind scancode231 ""                     // RWIN (do not use unless unbound in Windows)
+
+echo "-------------------------CS2 binds loaded from config file----------------------------"
+key_listboundkeys
