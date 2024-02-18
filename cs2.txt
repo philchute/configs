@@ -1,4 +1,4 @@
-// CS2 config, Philip Chute, Feb 17, 2024
+// CS2 config, Philip Chute, Feb 18, 2024
 // This config was written with Valve's new scancode region agnostic bindings as an exercise, a guide, and as a template
 // Place this a .txt or .cfg file in your Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg directory
 // Load in-game with the exec command in console like "exec myfilename.txt"
@@ -7,7 +7,7 @@
 //  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-----------------------+
 //  | ESCAPE|    |  F1   |  F2   |  F3   |  F4   |   |  F5   |  F6   |  F7   |  F8   |   |  F9   |  F10  |  F11  |  F12  |  | PRINT | SCROLL| PAUSE |
 //  | cancel|    | zeus  |       |autoBuy| rebuy |   | screen| save  | load  |       |   |       | quit  |       | prac. |  | screen| (na)  | pause |
-//  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-------+-------+-------+
+//  +-------+    +-------------------------------+   +-------------------------------+   +-------------------------------+  +-----------------------+
 //  +--------------------------------------------------------------------------------------------------------------------+  +-----------------------+  +-------------------------------+
 //  | `     |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |   -   |   =   |  BACKSPACE |  |  INS  | HOME  | PGUP  |  | NUM.L |   /   |   *   |   -   |
 //  |console|primary| pistol| melee | nades | bomb  |  HE   | flash | smoke | decoy |molotov| zeus  |utility|contactInfo |  |!r bind| hello | R.ns! |  |  (na) | no rus|  buy? | oh ok |
